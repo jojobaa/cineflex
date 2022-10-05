@@ -25,7 +25,7 @@ export default function Movies() {
     return (
         <>
             <Pfilm>
-                <p>Selecione o filme</p>
+                <h2>Selecione o filme</h2>
             </Pfilm>
             <Film>
                 {movies.map((film) => <RenderMovies key={film.id} film={film} />)}
@@ -35,7 +35,7 @@ export default function Movies() {
 }
 
 const Pfilm = styled.div`
-p{
+h2{
     color: #293845;
     font-size: 24px;
     font-family: 'Roboto', sans-serif; 

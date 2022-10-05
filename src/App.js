@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import Movies from "./Movies";
+import MovieId from "./MovieId";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
     return (
-        <>
+        <BrowserRouter>
             <Header><h1>CINEFLEX</h1></Header>
-            <Movies></Movies>
-        </>
+            <Routes>
+                <Route path="/" element={<Movies/>}/>
+                <Route path="/movie-id" element={<MovieId/>}/>
+                {/* <Route path="/movie-session" element={<MovieSession/>}/> 
+                <Route path="/movie-success" element={<MovieSuccess/>}/>    */}
+            </Routes>
+        </BrowserRouter>
     )
 }
 
