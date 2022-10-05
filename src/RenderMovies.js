@@ -8,9 +8,10 @@ export default function RenderMovies({ film }) {
   )
 }
 const RenderMovie = styled.div`
-display:flex;
 img{;
-  width: 129px;
   height: 193px;
+  margin: 10px;
+  border: 10px solid white;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
 }
 `

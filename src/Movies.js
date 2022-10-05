@@ -23,17 +23,35 @@ export default function Movies() {
 
 
     return (
-        <Film>
-            <p>Selecione o filme</p>
-            {movies.map((film) => <RenderMovies key={film.id} film={film} />)}
-        </Film>
+        <>
+            <Pfilm>
+                <p>Selecione o filme</p>
+            </Pfilm>
+            <Film>
+                {movies.map((film) => <RenderMovies key={film.id} film={film} />)}
+            </Film>
+        </>
     )
 }
 
-const Film = styled.div`
-p{;
+const Pfilm = styled.div`
+p{
     color: #293845;
     font-size: 24px;
     font-family: 'Roboto', sans-serif; 
+    margin: 30px 30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 `
+const Film = styled.div`
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+`
+
+
+
+
