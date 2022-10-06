@@ -9,7 +9,7 @@ export default function App() {
             <Header><h1>CINEFLEX</h1></Header>
             <Routes>
                 <Route path="/" element={<Movies/>}/>
-                <Route path="/movie-id" element={<MovieId/>}/>
+                <Route path="/movieId/:idFilm" element={<MovieId/>}/>
                 {/* <Route path="/movie-session" element={<MovieSession/>}/> 
                 <Route path="/movie-success" element={<MovieSuccess/>}/>    */}
             </Routes>

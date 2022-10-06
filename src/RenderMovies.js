@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export default function RenderMovies({ film }) {
+
   return (
     <RenderMovie>
-      <Link to="/movie-id">
+      <Link to={`/movieId/${film.id}`}>
         <img src={film.posterURL} alt=''/>
       </Link>
     </RenderMovie>
