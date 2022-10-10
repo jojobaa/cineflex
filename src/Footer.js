@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-export default function Footer({posterURL, title, weekday, day}) {
+export default function Footer({ posterURL, title, weekday, day }) {
     return (
         <Footer2>
             <img src={posterURL} alt='' />
-            <p>{title}</p>
-            {weekday ? (<p>{weekday} - {day}</p>) : ('')}
+            <ContainerFooter>
+                <p>{title}</p>
+                {weekday ? (<p>{weekday} - {day}</p>) : ('')}
+            </ContainerFooter>
         </Footer2>
     )
 }
@@ -36,4 +38,10 @@ p{
     font-size:26px;
     margin-left:20px;
 }
+`
+const ContainerFooter = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding-top: 20px;
 `

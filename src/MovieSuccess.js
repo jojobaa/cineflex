@@ -1,23 +1,32 @@
+import { useLocation } from "react-router-dom"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 export default function MovieSuccess() {
+    const { name, cpf, titleFilm, day, placeEmpty, hours } = useLocation().state
+
     return (
         <ContainerInfo>
             <h1>Pedido feito com sucesso!</h1>
             <FilmSession>
                 <h2>Filme e sessão</h2>
-                <p>Enola Holmes 24/06/2021 15:00</p>
+                <p>{titleFilm}</p>
+                <p>{day} {hours}</p>
             </FilmSession>
-            <FilmTickets>
+            <FilmSession>
                 <h2>Ingressos</h2>
-                <p>Assento 15 Assento 16</p>
-            </FilmTickets>
-            <FilmPerson>
+                {placeEmpty.map((v, i) => (
+                    <p key={i}>Assento {v}</p>
+                ))}
+
+            </FilmSession>
+            <FilmSession>
                 <h2>Comprador</h2>
-                <p>Nome: João da Silva Sauro CPF: 123.456.789-10</p>
-            </FilmPerson>
+                <p>Nome: {name} </p>
+                <p>CPF:{cpf}</p>
+            </FilmSession>
             <Button>
-                <button>Voltar pra Home</button>
+                <Link to="/"><button>Voltar pra Home</button></Link>
             </Button>
         </ContainerInfo>
     )
@@ -25,25 +34,38 @@ export default function MovieSuccess() {
 
 const ContainerInfo = styled.div`
 margin-top: 100px;
+width: 324px;
+height: 110px;
+color: #247A6B;
+font-size: 22px;
+font-weight: 400;
+font-family: 'Roboto', sans-serif; 
+line-height: 1.5;
+padding: 0px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
 h1{
-    width: 324px;
-    height: 110px;
-    color: #247A6B;
-    font-size: 24px;
-    font-weight: 300;
-    font-family: 'Roboto', sans-serif; 
+    font-weight: 700;
+    margin-bottom: 30px;
 }
+
 `
 const FilmSession = styled.div`
-margin-top: 10px;
+width: 324px;
+height: 110px;
+margin-bottom: 50px;
+display: flex;
+flex-direction: column;
+h2{
+    color: #293845;
+    font-weight: 700;
+}
+p{
+    color: #293845;
+}
 `
-const FilmTickets = styled.div`
-margin-top: 10px;
-`
-const FilmPerson = styled.div`
-margin-top: 10px;
-`
-
 const Button = styled.div`
    button{
     display: flex;
