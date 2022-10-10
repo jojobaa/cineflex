@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Movies from "./Movies";
 import MovieId from "./MovieId";
 import MovieSession from "./MovieSession";
+import MovieSuccess from "./MovieSuccess";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
                 <Route path="/" element={<Movies/>}/>
                 <Route path="/movieId/:idFilm" element={<MovieId/>}/>
                 <Route path="/movie-session/:idSeat" element={<MovieSession/>}/> 
-                {/* <Route path="/movie-success" element={<MovieSuccess/>}/>    */}
+                <Route path="/movie-success" element={<MovieSuccess/>}/>   
             </Routes>
         </BrowserRouter>
     )

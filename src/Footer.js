@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
-export default function Footer({infoFilm}) {
+export default function Footer({posterURL, title, weekday, day}) {
     return (
         <Footer2>
-            <img src={infoFilm.posterURL} alt='' />
-            <p>{infoFilm.title}</p>
+            <img src={posterURL} alt='' />
+            <p>{title}</p>
+            {weekday ? (<p>{weekday} - {day}</p>) : ('')}
         </Footer2>
     )
 }
 
 const Footer2 = styled.div`
 width:100%;
-height:117px;
+height:100px;
 display:flex;
 background-color:#DFE6ED;
 box-shadow: 4px 1px 1px rgba(0, 0, 0, .3);

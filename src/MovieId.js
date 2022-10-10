@@ -35,7 +35,7 @@ export default function RenderMovies() {
                 </MovieHours>
             )}
             </ContainerMovie>
-            <Footer infoFilm={infoFilm}/>
+            <Footer posterURL={infoFilm.posterURL} title={infoFilm.title}/>
         </RenderMovieInformation>
     )
 }

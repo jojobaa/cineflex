@@ -37,9 +37,6 @@ export default function Seat({ id, number, available, idSeats, setIdSeats, place
     )
 }
 
-const ContainerSeats = styled.div`
-display:flex;
-`
 const MovieSeat = styled.div`
 width:26px;
 height:26px;
@@ -50,6 +47,7 @@ background-color:${props => props.selected ? ('#1AAE9E') : ('#C3CFD9')};
 border-radius:15px;
 border: ${props => props.selected ? ('1px solid #0E7D71') : ('1px solid #7B8B99')};
 margin-right: 5px;
+margin-left: 5px;
 margin-bottom: 10px;
 `
 const MovieSeatUnavailable = styled.div`
@@ -62,5 +60,6 @@ background-color:#FBE192;
 border-radius:15px;
 border: 1px solid #F7C52B;
 margin-right: 5px;
+margin-left: 5px;
 margin-bottom: 10px;
 `

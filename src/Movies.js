@@ -34,7 +34,7 @@ export default function Movies() {
 }
 
 const Pfilm = styled.div`
-margin-top: 150px;
+margin-top: 100px;
 h2{
     color: #293845;
     font-size: 24px;
