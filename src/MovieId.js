@@ -27,11 +27,11 @@ export default function RenderMovies() {
 
             <h2>Selecione o horário</h2>
 
-            <ContainerMovie>
+            <ContainerMovie  data-identifier="session-date">
                 {infoSession.map((s) =>
                     <MovieHours key={s.id}>
                         <p>{s.weekday} - {s.date}</p>
-                        {s.showtimes.map((showtime) => <Link to={`/movie-session/${showtime.id}`}><button>{showtime.name}</button></Link>)}
+                        {s.showtimes.map((showtime) => <Link to={`/movie-session/${showtime.id}`}><button data-identifier="hour-minute-btn">{showtime.name}</button></Link>)}
                     </MovieHours>
                 )}
             </ContainerMovie>

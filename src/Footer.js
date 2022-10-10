@@ -3,9 +3,9 @@ import styled from "styled-components";
 export default function Footer({ posterURL, title, weekday, day }) {
     return (
         <Footer2>
-            <img src={posterURL} alt='' />
+            <img src={posterURL} alt='' data-identifier="movie-img-preview"/>
             <ContainerFooter>
-                <p>{title}</p>
+                <p data-identifier="movie-and-session-infos-preview">{title}</p>
                 {weekday ? (<p>{weekday} - {day}</p>) : ('')}
             </ContainerFooter>
         </Footer2>

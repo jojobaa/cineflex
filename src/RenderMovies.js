@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function RenderMovies({ film }) {
 
   return (
-    <RenderMovie>
+    <RenderMovie data-identifier="movie-outdoor">
       <Link to={`/movieId/${film.id}`}>
         <img src={film.posterURL} alt=''/>
       </Link>

@@ -32,28 +32,29 @@ export default function Forms({ hours, film, day, idSeats, placeEmpty }) {
         <Form>
             <form onSubmit={FormInfo}>
                 <div className="NomeComprador">
-                    <h3>Nome do comprador:</h3>
-                    <input type='text' placeholder="Digite seu nome..."
+                    <h3 data-identifier="buyer-name-input">Nome do comprador:</h3>
+                    <input data-identifier="movie-session-infos-reserve-finished"type='text' placeholder="Digite seu nome..."
                         onChange={(e) => setName(e.target.value)}
                         value={name}
                         required
                     ></input>
                 </div>
                 <div className="CpfComprador">
-                    <h3>CPF do comprador:</h3>
-                    <input type='text' placeholder="Digite seu CPF..."
+                    <h3 data-identifier="buyer-cpf-input">CPF do comprador:</h3>
+                    <input data-identifier="buyer-infos-reserve-finished" type='text' placeholder="Digite seu CPF..."
                         onChange={(e) => setCpf(e.target.value)}
                         value={cpf}
                         required
                     ></input>
                 </div>
-                <button>Reservar assento(s)</button>
+                <button data-identifier="reservation-btn">Reservar assento(s)</button>
             </form>
         </Form>
     )
 }
 
 const Form = styled.div`
+margin-bottom: 400px;
 form{
     margin-top:80px;
     display: flex;

@@ -38,15 +38,15 @@ export default function MovieSession() {
                     <h2>Selecione o(s) assento(s)</h2>
                     <ContainerSeats>
                         {seatss.seats.map((value, i) =>
-                        (<Seat key={i} id={value.id} number={value.name} available={value.isAvailable} idSeats={idSeats}
+                        (<Seat data-identifier="seat" key={i} id={value.id} number={value.name} available={value.isAvailable} idSeats={idSeats}
                             setIdSeats={setIdSeats} placeEmpty={placeEmpty} setPlaceEmpty={setPlaceEmpty} />)
                         )}
                     </ContainerSeats>
 
                     <SeatsInfo>
-                        <SeatSelected><p>Selecionado</p></SeatSelected>
-                        <SeatAvailable><p>Disponível</p></SeatAvailable>
-                        <SeatUnavailable><p>Indisponível</p></SeatUnavailable>
+                        <SeatSelected data-identifier="seat-selected-subtitle"><p>Selecionado</p></SeatSelected>
+                        <SeatAvailable data-identifier="seat-available-subtitle"><p>Disponível</p></SeatAvailable>
+                        <SeatUnavailable data-identifier="seat-unavailable-subtitle"><p>Indisponível</p></SeatUnavailable>
                     </SeatsInfo>
                     <Forms film={film} hours={hours} day={day.weekday} date={day.date}
                      idSeats={idSeats} placeEmpty={placeEmpty}/>

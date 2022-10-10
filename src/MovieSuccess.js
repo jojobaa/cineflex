@@ -25,7 +25,7 @@ export default function MovieSuccess() {
                 <p>Nome: {name} </p>
                 <p>CPF:{cpf}</p>
             </FilmSession>
-            <Button>
+            <Button data-identifier="back-to-home-btn">
                 <Link to="/"><button>Voltar pra Home</button></Link>
             </Button>
         </ContainerInfo>
