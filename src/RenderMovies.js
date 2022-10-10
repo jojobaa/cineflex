@@ -12,7 +12,7 @@ export default function RenderMovies({ film }) {
   )
 }
 const RenderMovie = styled.div`
-img{;
+img{
   height: 193px;
   margin: 10px;
   border: 10px solid white;

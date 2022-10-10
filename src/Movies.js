@@ -12,7 +12,6 @@ export default function Movies() {
         const promise = axios.get(URL)
 
         promise.then((res) => {
-            console.log(res.data)
             setMovies(res.data)
         })
 
@@ -35,6 +34,7 @@ export default function Movies() {
 }
 
 const Pfilm = styled.div`
+margin-top: 150px;
 h2{
     color: #293845;
     font-size: 24px;

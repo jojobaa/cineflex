@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "./Footer";
 
 export default function RenderMovies() {
     const [infoFilm, setInfoFilm] = useState({})
+    const [infoSession, setInfoSession] = useState([])
     const { idFilm } = useParams()
 
     useEffect(() => {
@@ -12,37 +14,35 @@ export default function RenderMovies() {
 
         promise.then((res) => {
             setInfoFilm(res.data)
+            setInfoSession(res.data.days)
         })
         promise.catch((err) => {
             console.log(err.response.data)
         })
 
-    }, [])
+    }, [idFilm])
 
     return (
         <RenderMovieInformation>
             <Link to="/">
                 <h2>Selecione o horário</h2>
             </Link>
-            <MovieHours>
-                <p>Quinta-feira - 24/06/2021</p>
-                <button>15:00</button>
-                <button>19:00</button>
-            </MovieHours>
-            <MovieHours>
-                <p>Quinta-feira - 24/06/2021</p>
-                <button>15:00</button>
-                <button>19:00</button>
-            </MovieHours>
-            <Footer>
-                <img src={infoFilm.posterURL} alt=''/>
-                <p>{infoFilm.title}</p>
-            </Footer>
+            <ContainerMovie>
+            {infoSession.map((s) =>
+                <MovieHours key={s.id}>
+                    <p>{s.weekday} - {s.date}</p>
+                    {s.showtimes.map((showtime) => <Link to={`/movie-session/${showtime.id}`}><button>{showtime.name}</button></Link> )} 
+                </MovieHours>
+            )}
+            </ContainerMovie>
+            <Footer infoFilm={infoFilm}/>
         </RenderMovieInformation>
     )
 }
 
 const RenderMovieInformation = styled.div`
+margin-top:100px;
+height:200px;
 h2{
     color: #293845;
     font-size: 24px;
@@ -74,22 +74,7 @@ button{
     font-size:18px;
 }
 `
-const Footer = styled.div`
-display:flex;
-background-color:#DFE6ED;
-box-shadow: 4px 1px 1px rgba(0, 0, 0, .3);
-img{
-    width:48px;
-    heigth:72px;
-    margin-left:20px;
-}
-p{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#293845;
-    font-family: 'Roboto', sans-serif; 
-    font-size:26px;
-    margin-left:20px;
-}
+const ContainerMovie = styled.div`
+height: 950px;
+margin-bottom: 900px;
 `
