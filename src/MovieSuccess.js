@@ -70,6 +70,7 @@ p{
 }
 `
 const Button = styled.div`
+margin-bottom: 150px;
    button{
     display: flex;
     justify-content:center;
