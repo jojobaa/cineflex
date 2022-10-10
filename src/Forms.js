@@ -54,7 +54,7 @@ export default function Forms({ hours, film, day, idSeats, placeEmpty }) {
 }
 
 const Form = styled.div`
-margin-bottom: 400px;
+margin-bottom: 150px;
 form{
     margin-top:80px;
     display: flex;
