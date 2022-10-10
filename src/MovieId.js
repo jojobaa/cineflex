@@ -24,18 +24,18 @@ export default function RenderMovies() {
 
     return (
         <RenderMovieInformation>
-            <Link to="/">
-                <h2>Selecione o horário</h2>
-            </Link>
+
+            <h2>Selecione o horário</h2>
+
             <ContainerMovie>
-            {infoSession.map((s) =>
-                <MovieHours key={s.id}>
-                    <p>{s.weekday} - {s.date}</p>
-                    {s.showtimes.map((showtime) => <Link to={`/movie-session/${showtime.id}`}><button>{showtime.name}</button></Link> )} 
-                </MovieHours>
-            )}
+                {infoSession.map((s) =>
+                    <MovieHours key={s.id}>
+                        <p>{s.weekday} - {s.date}</p>
+                        {s.showtimes.map((showtime) => <Link to={`/movie-session/${showtime.id}`}><button>{showtime.name}</button></Link>)}
+                    </MovieHours>
+                )}
             </ContainerMovie>
-            <Footer posterURL={infoFilm.posterURL} title={infoFilm.title}/>
+            <Footer posterURL={infoFilm.posterURL} title={infoFilm.title} />
         </RenderMovieInformation>
     )
 }

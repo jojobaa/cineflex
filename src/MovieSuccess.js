@@ -45,6 +45,9 @@ padding: 0px 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
+a{
+    text-decoration: none;
+}
 
 h1{
     font-weight: 700;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Seat from "./Seat";
 import Footer from "./Footer";
@@ -35,7 +35,7 @@ export default function MovieSession() {
         <>
             <SessionMovie> {seatss.length === 0 ? '' :
                 <>
-                    <Link to="/"><h2>Selecione o(s) assento(s)</h2></Link>
+                    <h2>Selecione o(s) assento(s)</h2>
                     <ContainerSeats>
                         {seatss.seats.map((value, i) =>
                         (<Seat key={i} id={value.id} number={value.name} available={value.isAvailable} idSeats={idSeats}
